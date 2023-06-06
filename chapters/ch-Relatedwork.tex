@@ -1,0 +1,281 @@
+\SetPicSubDir{ch-Relatedwork}
+
+\chapter{Related Work}
+\label{ch:Relatedwork}
+
+Notification management is part of the broader research area concerning interruption management during multitasking \cite{anderson_survey_2018, mehrotra_intelligent_2018}. In light of this, we begin by providing background information on multitasking and interruption management. Given that this thesis specifically targets the visual modality of OHMD notifications, we subsequently delve into the intricacies of human visual perception and how it can be employed to minimize attention costs associated with notifications designed for OHMDs.
+
+
+
+
+
+\section{Attention}
+\label{sec:Relatedwork:multitasking_interruption}
+
+
+Notifications serve as a means of shifting attention from one task to another and enabling multitasking \cite{iqbal_notifications_2010, norman_psychological_1986, anderson_survey_2018}. As a result, notifications interrupt ongoing tasks by reallocating attention from the current tasks to the notifications themselves. Once the notifications are attended to, attention is reallocated back to the previous tasks, and work on their resumes. This section discusses how our work relates to interruption management and attention allocation during multitasking.
+
+
+\subsection{Attention and multitasking}
+\label{sec:Relatedwork:attention}
+
+
+Attention can be defined as a cognitive resource that enables individuals to focus on particular stimuli (e.g., parts of a task) in order to selectively process and filter information \cite{wickens_attention_2013, apa_attention_2021}. There are multiple theories and frameworks concerning attention management and allocation across various tasks, such as Kahneman's resource theory \cite{kahneman1973attention}, Wickens' multiple resource theory \cite{wickens_processing_1991}, and the Resource Completion Framework \cite{oulasvirta_interaction_2005}. In each of these theories, attention is conceptualized as a finite (or elastic) resource, and multitasking can incur cognitive, perceptual, physiological, and social costs \cite{wobbrock_situationally_2019, oulasvirta_interaction_2005}.
+
+In scenarios involving multitasking ---where individuals undertake multiple tasks or activities simultaneously \cite{spink2008multitasking, gonzalez_constant_2004}--- attention is necessarily divided among these various tasks \cite{wickens_processing_1991, oulasvirta_interaction_2005}, leading to attention fragmentation \cite{oulasvirta_interaction_2005}. Despite the attentional costs inherent to multitasking, individuals often persist in multitasking with their mobile devices, drawn by the perceived benefits of increased information intake \cite{wang2012myth, paridon2010multitasking}. For instance, a person might simultaneously read or type text messages on a mobile phone while navigating a busy street. Even though such a situation can be risky, the perceived benefits ---such as enhanced connectedness with others and saved time--- encourage this form of multitasking behavior.
+
+\subsection{Human interruption}
+\label{sec:Relatedwork:interruption}
+
+\textit{Human interruptions} enable users to switch their attention between different tasks and support multitasking behaviors \cite{norman_psychological_1986}. In the field of Human-Computer Interaction (HCI), McFarlane \cite{mcfarlane_scope_2002, mcfarlane_interruption_1997} defined \textit{human interruption} as "the process of coordinating abrupt changes in people's activities." However, human interruptions can lead to errors and reduced performance when interacting with devices, such as computers, as attention becomes fragmented across tasks \cite{bailey_effects_2001, bailey_need_2006, adamczyk_if_2004}. McFarlane \cite{mcfarlane_interruption_1997} identified eight descriptive aspects of human interruption: 1) \textit{source of interruption}, 2) \textit{receiver's characteristics}, 3) \textit{coordination method}, 4) \textit{meaning of interruption} (i.e., the content or purpose of the interruption), 5) \textit{method of expression} (i.e., design aspects of the interruption), 6) \textit{channel of conveyance} (i.e., the medium through which the interruption is received), 7) \textit{human activity changed by interruption}, and 8) \textit{effect of interruption} (i.e., the impact of interruption on ongoing tasks and the user).
+
+
+This thesis specifically focuses on a particular form of human interruption arising from OHMD visual notifications (i.e., the source of interruption is OHMD notifications, and the channel of conveyance is the visual modality). We limit our exploration to the design aspects of notifications (i.e., the method of expression) and investigate how they affect notification handling strategies (i.e., coordination method) and the effects of interruption, which we discuss in the following sections. To ensure generalizability and avoid subjective biases, we exclude the receiver's characteristics and the specific meaning of interruption from our evaluations.
+
+
+\subsection{Resumption}
+\label{sec:Relatedwork:interruption_resumption}
+
+The Unified Multitasking Theory \cite{salvucci_toward_2009} outlines multitasking behaviors with human interruptions and their effects on cognitive resources, such as attention and memory. As depicted in \autoref{fig:Relatedwork:interruption_resumption} and \autoref{fig:Relatedwork:phases_interruption}, interruption behavior can be modeled as a cycle with multiple stages, where attention is switched from a primary task to a secondary task during the interruption and returned to the primary task during resumption. Specifically, providing an \textit{interruption lag} can assist users in remembering the state of the primary task before attending to the secondary task, facilitating the faster resumption of the primary task and minimizing distraction from the secondary task \cite{iqbal_disruption_2007, salvucci_toward_2009}.
+
+\begin{figure*}[hptb]
+  \centering
+  \includegraphics[width=1.02\linewidth]{\Pic{stages_of_interruption.png}}
+  \caption[The stages of interruption and resumption]{The stages of interruption and resumption and the task threads associated with each stage (Source: \cite[Figure~3]{salvucci_toward_2009}). The \textit{interruption lag} can help users remember the primary task state before attending to a secondary task, allowing users to resume primary tasks faster and minimize the distraction from the secondary task.}
+  \label{fig:Relatedwork:interruption_resumption}	  
+\end{figure*}
+
+
+In this thesis, we employ a dual-task paradigm \cite{pashler_dual_task_1994} to investigate the effects of notifications, where users engage in notifications as the secondary task while concurrently performing a primary task. Specifically, we attempt to utilize the \i{interruption lag} to minimize the attention costs of OHMD notifications using visual perception properties (e.g.,  \autoref{ch:Gradnotif}).
+
+\begin{figure*}[hptb]
+  \centering
+  \includegraphics[width=0.6\linewidth]{\Pic{phases_interrruption_life_cycle.png}}
+  \caption[The phases of interruption life cycle]{Phases of the interruption lifecycle (Source: \cite[Figure~1]{iqbal_disruption_2007}). a) User begins an interaction with two applications on a primary task, continuing through a pre-interruption phase; b) alert arrives, and the user enters a response preparation phase; c) user suspends the primary task and switches to interrupting application and may become diverted to other peripheral applications; d) user returns to resume the primary task.}
+  \label{fig:Relatedwork:phases_interruption}	  
+\end{figure*}
+
+
+
+
+
+
+
+
+
+
+\section{Human Visual Perception}
+\label{sec:Relatedwork:human_visual_perception}
+
+Humans primarily sense the environment through five sensory organs: the eyes, ears, nose, tongue, and skin, and interpret the sensory input through the nervous system \cite{kalat_biological_2012}. For instance, visual stimuli are detected by the eyes and interpreted as sight/vision. Among these organs, the eyes play a dominant role, accounting for the intake of over 80\% of all information \cite{rosenblum2011see}. Human vision is capable of processing a vast amount of information and tends to dominate over other senses \cite{stokes_dominance_2015}.  The process of interpreting sensory information is referred to as \textit{perception} \cite[Ch~1]{goldstein_sensation_2016}, which enables the identification and understanding of the perceived stimuli.
+
+
+Successful perception of visual information can be influenced by various factors, with the three main factors being the vision regions, patterns of the information, and luminance contrast \cite[Ch~6]{ware_information_2013}. These factors correspond to the information receiver (i.e., the eyes), the information source (e.g., virtual content on OHMD), and the information channel (i.e., light) \cite{kalat_biological_2012, ware_information_2013}. Thus, we have examined previous literature in these three areas.
+
+% \subsection{Visual perception}
+% \label{sec:Relatedwork:visual_perception}
+% Human eyes perceive the light (stimuli) by three main characteristics: intensity (experience as brightness), wavelength (experience as hue), and purity (experience as saturation) \cite{alvarado_sensation_2011, goldstein_sensation_2016}. When the light enters the eyes, it stimulates the photoreceptors (i.e., specialized cells for detecting light) located in the retina (i.e., the rear surface of the eyes) \cite{kalat_biological_2012, lindsay_human_2013}. 
+% The distribution of different photoreceptors in the retina is not uniform, so human vision has different characteristics based on the location where external light stimulates \cite{kalat_biological_2012, lindsay_human_2013}. Thus, human vision can be divided into central vision (a.k.a., foveal vision) and peripheral vision \cite{strasburger_peripheral_2011}.
+
+\subsection{Central and peripheral vision}
+\label{sec:Relatedwork:central_peripheral_vision}
+
+Human vision can be divided into central (also known as foveal) and peripheral vision \cite{strasburger_peripheral_2011}. Central vision exhibits the highest visual acuity, providing high sensitivity to details and enabling the perception of fine information \cite{kalat_biological_2012}. For instance, central vision is employed when reading texts and identifying intricate shapes. It is located at the center of our gaze, with an eccentricity (i.e., the angular distance from the center of the visual field \cite{millodot_dictionary_2008}, also referred to as the "visual angle" \cite{gutwin_peripheral_2017}) of approximately 2.5\textdegree{} (degrees), while peripheral vision extends beyond the central vision \cite{strasburger_peripheral_2011, ku_peritext_2019} (see \autoref{fig:background:fov_of_eye}).
+
+Peripheral vision also can perceive certain information, such as faint light. However, its capabilities degrade as it moves further towards the periphery \cite{kalat_biological_2012}. For instance, text perception significantly diminishes after approximately 10 degrees of eccentricity, shape perception degrades after approximately 30 degrees, color perception degrades after approximately 60 degrees, and motion perception degrades after approximately 90 degrees \cite[Ch~C.9]{ishiguro_peripheral_2011, panero1979human}.
+
+\begin{figure}[hptb]
+  \centering
+  \includegraphics[width=0.7\linewidth]{\Pic{field_of_view.jpg}}
+  \caption[Angular field of view of the human eye]{Angular field of view of the human eye (source: \cite{wiki_fov_2021} CC BY-SA 3.0). The central vision has an eccentricity (visual angle) of 2.5\textdegree{}, the paracentral vision has an eccentricity of 4\textdegree{}, and the near-peripheral vision has an eccentricity of 15\textdegree{}.}
+  \label{fig:background:fov_of_eye}	  
+\end{figure}
+
+
+
+A closer examination of peripheral vision reveals multiple ring-shaped regions based on the anatomy of the eyes. As depicted in \autoref{fig:background:fov_of_eye}, these regions are known as paracentral, near-peripheral, mid-peripheral, and far-peripheral vision \cite{strasburger_peripheral_2011, chaturvedi_peripheral_2019, ku_peritext_2019}.
+Although the exact location of these regions lacks consensus in the existing literature due to subjective differences \cite{strasburger_peripheral_2011}, multiple resources \cite{chaturvedi_peripheral_2019, ku_peritext_2019} have indicated that paracentral vision is situated between eccentricities of approximately 2.5 to 4 degrees, while near-peripheral vision occupies the range of 4 to 15 degrees of eccentricity.
+Previous research \cite{schotter_parafoveal_2012, rayner_eye_1998} has demonstrated that people can recognize text to some extent using paracentral vision, based on the phenomenon known as "parafoveal preview," although not as effectively as when utilizing central vision. Moreover, the efficiency of reading based on this parafoveal preview depends on individuals' familiarity with the word, as they tend to make educated guesses (when the word is unclear) based on context, especially for common and familiar words \cite{schotter_parafoveal_2012}. The near-peripheral region is capable of recognizing shapes and symbols \cite[Ch~C.9]{ishiguro_peripheral_2011, panero1979human}. These capabilities can be further explored to perceive secondary information that requires more detail than peripheral vision alone can handle, thereby creating new opportunities for supporting visual multitasking.
+
+
+Offloading visual tasks to peripheral vision can effectively reduce the reliance on and distraction to central vision. Several studies have explored this concept to support various multitasking scenarios \cite{chaturvedi_peripheral_2019, ishiguro_peripheral_2011, gruenefeld_guiding_2018, luyten_hidden_2016, poppinga_ambiglasses_2012, costanza_eye_q_2006, nakuo_smart_2016, ku_peritext_2019}. For instance, Chaturvedi et al. \cite{chaturvedi_peripheral_2019} showed that presenting visual cues in one's peripheral vision can reduce the usage of central vision by up to 50\% under specific circumstances.
+
+
+While the mid-peripheral and far-peripheral regions have been explored in the field of HCI for presenting secondary information, such as notifications \cite{luyten_hidden_2016, nakuo_smart_2016, chaturvedi_peripheral_2019, gruenefeld_guiding_2018, poppinga_ambiglasses_2012, costanza_eye_q_2006}, the paracentral and near-peripheral regions \cite{ku_peritext_2019} remain relatively unexplored.
+However, as mentioned earlier, a significant limitation of using peripheral vision is the limited visual acuity, which restricts the level of detail that can be perceived (e.g., textual information is not well supported).
+
+Thus, \autoref{ch:Progressbar} explores the potential use of paracentral and near-peripheral vision for OHMD notification presentation without compromising the information content, as these regions have been shown to possess more capabilities than other peripheral regions.
+Similarly, \autoref{ch:Iconnotif} and \autoref{ch:Gradnotif} investigate the utilization of central vision to present OHMD notifications while reducing distraction using the following perceptual properties.
+
+\subsection{Pattern perception}
+\label{sec:Relatedwork:pattern_perception}
+
+ 
+Humans possess different pattern perception abilities, also known as form perception \cite{alvarado_sensation_2011}, which refers to the ability to recognize text/words, shapes, faces, and other visual patterns. Generally, shapes are easier to identify than text because the human brain can recognize low-complexity patterns such as shapes more quickly and efficiently than composite patterns like text, which consists of sequences of letters \cite[Ch~6]{wickens_engineering_2015}.
+
+A common form of shape is a pictogram, defined as a "stylized figurative drawing that is used to directly convey information of an analogical or figurative nature to indicate an object or to express an idea" \cite{tijus_design_2007}. Pictograms are widely used in various forms of communication, including emojis/emoticons in messaging \cite{zhou_goodbye_2017, tauch_the_2016}, emergency communication scenarios \cite{wolk_pictogram_2017, fitrianie_communication_2005}, and for individuals with intellectual disabilities \cite{sevens_words_2018}.
+
+Despite the extensive use of pictograms, there is no consensus regarding their effectiveness compared to text. A substantial body of work, particularly in the domain of traffic sign research (for reviews, see \cite{bartlomiejczyk_text_2013, castro_effectiveness_2004}), favors the use of pictograms due to their language independence \cite{tijus_design_2007}, rapid recognition \cite{ells_rapid_1979, kline_visibility_1990}, and concise information presentation \cite{camacho_icons_1990, mcdougall_measuring_1999}. Several studies have demonstrated these advantages, finding that pictograms were easier to use than their textual counterparts \cite{tijus_design_2007, caplin_2001_icon}.
+
+Conversely, another set of previous studies argues against the notion mentioned above \cite{shinar_comprehension_2013, wiedenbeck_use_1999, theios_theoretical_1989, hameen_anttila_pictograms_2004}. For instance, Roca et al. \cite{roca_legibility_2018} compared traffic signs using single words with pictograms and found that single-word messages were associated with better performance (greater reading distances) and required less visual effort (fewer glances and shorter glancing times) compared to pictograms.
+
+Considering the discrepancy in the literature concerning the effectiveness of pictograms, our objective was to delve deeper into this issue to elucidate the possible reasons for these conflicting findings. In \autoref{ch:Iconnotif}, we seek to address this question by examining the effective application of form perception in the design of OHMD notifications.
+
+
+\subsection{Luminance, brightness, and contrast}
+\label{sec:Relatedwork:liminance_brightness}
+ 
+Human eyes perceive objects, patterns, and details based on the contrast difference of light against a background, known as luminance contrast \cite[Ch~3]{ware_information_2013}. Luminance refers to the measured amount of light, while brightness represents the perceived amount of light emitted from a source \cite[Ch~3]{ware_information_2013}. Stimuli with high luminance contrast are more salient and tend to attract visual attention \cite{lee_oxford_2013, mccay_peet_saliency_2012}.
+
+In notifications, this attention-grabbing effect can interrupt users' primary tasks \cite{tasse_getting_2016, maglio_tradeoffs_2000, mccrickard_evaluating_2001}. One approach to minimize such disruptions is to use controlled animations that manage the contrast difference \cite{tasse_getting_2016, maglio_tradeoffs_2000}. \autoref{ch:Gradnotif} explores the property of luminance contrast in OHMD notification design, specifically focusing on fade animations. By controlling the luminance with proper timing, these animations aim to minimize attention-grabbing while preserving information details.
+
+
+
+
+
+
+
+
+\section{Notifications}
+\label{sec:Relatedwork:notifications}
+
+In order to understand the multifaceted nature of notifications and effectively manage them, we will explore various aspects related to their effects and strategies for optimization.
+
+\subsection{Multifaceted nature of mobile notifications}
+\label{sec:Relatedwork:notification_usage}
+
+The proliferation of mobile and wearable computing devices has increased the number of notifications users receive \cite{chuang_ambient_2017, noauthor_push_2019, statista_us_2021}. Unlike desktop settings where users have the option to opt out of notifications naturally \cite{pielot_didnt_2014}, users keep their mobile devices, such as smartphones, with them at all times and are susceptible to constant interruptions \cite{dey_getting_2011, hakoama2011impact}. Presently, mobile users receive a substantial volume of notifications (more than 60 per day for the general population \cite{sahami_shirazi_large_scale_2014, pielot_dismissed_2018}, more than 400 per day for college students \cite{lee_hooked_2014}), with most notifications being attended to within a few minutes \cite{pielot_situ_2014, sahami_shirazi_large_scale_2014}. Communication applications (e.g., messaging, voice, email), social media applications, and calendar/reminder applications are the primary sources of notifications \cite{sahami_shirazi_large_scale_2014, pielot_situ_2014}.
+
+Notifications offer several benefits, such as increasing awareness of digital information \cite{iqbal_notifications_2010, horvitz_balancing_2005}, enabling proactive communication \cite{pielot_situ_2014}, fostering social connectedness \cite{pielot_situ_2014}, and aiding in task management \cite{paul_interruptive_2015}. However, receiving notifications at random times, especially those irrelevant to the ongoing task \cite{mehrotra_designing_2015}, can have negative consequences. These include reduced work performance \cite{stothart_attentional_2015, bailey_effects_2001, cutrell_notification_2001}, increased task error rates \cite{adamczyk_if_2004}, and the induction of negative emotions \cite{bailey_effects_2001, adamczyk_if_2004, kushlev_silence_2016, pielot_situ_2014}.
+
+
+Thus, the goal of maximizing the utility of notifications (e.g., increased awareness, proactive communication) while minimizing the adverse effects (e.g., attention costs) has become crucial in notification systems and HCI research \cite{mccrickard_attuning_2003, mccrickard_model_2003}.
+
+
+\subsection{Notification models and evaluation}
+\label{sec:Relatedwork:notification_evaluation}
+
+Researchers have developed various evaluation criteria and models to understand the effects of notifications on daily tasks and the underlying factors \cite{anderson_survey_2018}. Since notifications incur attention costs \cite{mccrickard_attuning_2003}, these models focus on addressing different aspects and effects of attention costs, such as task performance reduction \cite{pejovic_investigating_2015, bailey_effects_2001, cutrell_notification_2001}, error rates \cite{adamczyk_if_2004}, cognitive load \cite{zuger_interruptibility_2015, okoshi_reducing_2015, iqbal_investigating_2005}, interruptibility \cite{pejovic_interruptme_2014}, and receptivity \cite{mehrotra_designing_2015, sarker_assessing_2014}.
+
+
+In stationary environments, most models utilize the life cycle of tasks and notifications (e.g., phases/stages, \autoref{fig:Relatedwork:phases_interruption}) to understand the effects of notifications. Examples include the interruption life cycle model \cite{iqbal_disruption_2007} and the interruption management stage model \cite{latorella_effects_1998}. In mobile environments, where additional contextual factors come into play, most models consider the context (e.g., user activity, message content) to infer the user's attention level and associated attention costs \cite{anderson_survey_2018, mehrotra_intelligent_2018, pejovic_interruptme_2014, ho_using_2005}.
+Thus, as depicted in \autoref{fig:Intro:attention_utility_tradeoff}, the effects of notifications, including attention costs, depend on situational factors (e.g., context, user characteristics, information characteristics) and user goals (e.g., expectation of interruption) \cite{mccrickard_attuning_2003, mccrickard_model_2003, gluck_matching_2007}.
+
+
+McCrickard et al. \cite{mccrickard_model_2003, chewar_unpacking_2004, mccrickard_attuning_2003, mccrickard_establishing_2003} developed the \textit{IRC framework} based on the attention-utility trade-off, focusing on user goals to improve design decisions for notification systems. Their model, depicted in \autoref{fig:Intro:IRC_framework}, incorporates three critical parameters: \textit{Interruption}, which prompts the transition and reallocation of attention from a task to the notification; \textit{Reaction}, which refers to the rapid and accurate response to notification stimuli; and \textit{Comprehension}, which involves remembering and making sense of the information conveyed by the notifications at a later time. These parameters capture the multifaceted nature of notifications. As shown in \autoref{tab:Relatedwork:IRC_measure}, objective and subjective measures are used to operationalize these parameters \cite{chewar_unpacking_2004}. For example, \textit{Interruption} is measured using primary task sustainment and the perceived cost to the primary task. \textit{Reaction} is measured using the success rate of noticing notifications, response time, and noticeability. Similarly, \textit{Comprehension} is measured using perception rate, understandability, and base comprehension (i.e., remembering notifications after several minutes).
+
+\begin{table}[hptb]
+\centering
+\caption[Measures based on IRC framework]{Measures based on IRC framework \cite{chewar_unpacking_2004, mccrickard_model_2003, mccrickard_attuning_2003}. Here [O] represents objective measures while [S] represents subjective measures.}
+\label{tab:Relatedwork:IRC_measure}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Parameter & Measures \\ \midrule
+\Interruption{} &  [O] Primary task sustainment (accuracy and speed)\\
+     &  [S] Perceived cost of interruption (task load) \\
+\Reaction{} &  [O]  Detection rate, Response time\\
+    & [S] Noticeability \\
+\Comprehension{} &  [O] Base comprehension (recall/recognition accuracy) \\
+    & [S] Understandability \\
+% \cmidrule(lr){2-2}
+\Satisfaction{}  & [S] Preference \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+
+Moreover, these critical parameters can be linked with human information processing models \cite{mccrickard_model_2003} to explain possible actions and generalize to both stationary and mobile environments. This model also enables the identification of differences between the targeted design model (i.e., expected parameters) and the actual user's model (i.e., resulting parameters). Hence, we utilize this model to evaluate our proposed notification designs in subsequent chapters within selected contexts. Additionally, we consider \textit{Satisfaction}, which reflects the overall approval of notifications. It is operationalized using preference \cite{mccrickard_attuning_2003} (\autoref{tab:Relatedwork:IRC_measure}) to understand the desirability \cite{norman_psychological_1986} of the proposed notification design.
+ 
+
+\subsection{Notification management}
+\label{sec:Relatedwork:notification_management}
+
+Despite the attention costs, avoiding or ignoring notifications is not a practical solution since it can cause anxiety and increase self-interruption due to the fear of missing out on information \cite{pielot_productive_2017, iqbal_notifications_2010}. Therefore, researchers have employed several strategies to manage notifications based on user attention \cite{anderson_survey_2018, mehrotra_intelligent_2018}. These strategies include \textit{mediating} (i.e., deferring notifications until the user is more receptive to them, e.g., \cite{okoshi_reducing_2015, pielot_beyond_2017, bailey_need_2006}), \textit{scheduling} (i.e., delivering notifications when the user expects to receive them, e.g., \cite{weber_snooze_2018, sarker_assessing_2014}), \textit{indicating} (i.e., indicating the availability of the receiving party to the sending party, e.g., \cite{zuger_reducing_2017, begole_lilsys_2004}), and \textit{mitigating} (i.e., changing the device or presentation modality of the notification, e.g., \cite{weber_situ_2016, lopez_tovar_managing_2015, zulkernain_mobile_2010, streefkerk_designing_2006}).
+
+Among these strategies, \textit{mitigating} strategies are the only type that provides notification information in a timely manner, which can be particularly useful if immediate attention or action is required. Instead of delaying the appearance of the message, \textit{mitigating} strategies reduce distraction by re-encoding messages into an easier-to-understand representation, thereby reducing cognitive load. Moreover, \textit{mitigating} strategies can be combined with other strategies to further minimize the distraction caused by notifications.
+
+This thesis explores novel \textit{mitigating} strategies based on the visual presentation of information to minimize the negative effects of visual notifications. To achieve this, we investigate the visual perception properties that can be used as \textit{mitigating} strategies.
+
+
+
+\subsection{OHMD notification management}
+\label{sec:Relatedwork:ohmd_notification_management}
+
+
+Similar to other mobile devices, OHMD applications and services generate notifications to provide users with secondary information. Moreover, like other mobile notifications, OHMD notifications also distract users from their primary tasks and reduce task performance \cite{lucero_notifeye_2014, mcatamney_examination_2006}. Since OHMDs have different characteristics (e.g., semi-transparent display, limited resolution) compared to desktop computers or mobile phones \cite{stephanidis_properties_2015, zhu_bishare_2020, yeh_head_2003, vadas_reading_2006, polonen_near_eye_2009, zhou_ubiquitous_2019}, previous studies have investigated various \textit{mitigating} strategies (\autoref{sec:Relatedwork:notification_management}) to minimize the adverse effects of OHMD notifications. We categorize these strategies under the following categories (\autoref{tab:Relatedwork:ohmd_notifications}).
+
+\begin{table}[hptb]
+\caption[Previous OHMD notification explorations]{A summary of some previous OHMD notification explorations.}
+\label{tab:Relatedwork:ohmd_notifications}
+\scalebox{0.82}{
+\begin{tabular}{@{}llll@{}}
+\toprule
+Main Category & Factor & Description of the Factor & Related work \\ \midrule
+Modality & Multi & Visual vs Auditory & \cite{ofek_reducing_2013, farve_user_2016, damian_augmenting_2015, cidota_workspace_2016} \\ 
+ & Single & Visual, Textual vs Graphical & \cite{ lucero_notifeye_2014, tanveer_rhema_2015} \\ \midrule
+Vision regions  & Peripheral vision & Out of focus, Retinal variables (e.g., shape, color) & \cite{luyten_hidden_2016, ishiguro_peripheral_2011} \\ 
+  & Central vision & Central vs Peripheral presentation & \cite{chaturvedi_peripheral_2019, ku_peritext_2019} \\
+  % & Paracentral vision & Linear vs Circular presentation & \cite{janaka_paracentral_2022} \\ 
+  \midrule
+Timing & Timing & Batches, Intermittent vs Continuous, Animations  & \cite{ofek_reducing_2013, tanveer_rhema_2015} \\ \midrule
+Placement & Position & (Left, Center, Right)$\times{}$(Top, Middle, Bottom) & \cite{chua_positioning_2016, rzayev_effects_2020, klose_text_2019} \\
+ & Stabilization & Head-locked, Body-Locked, World-locked & \cite{rzayev_effects_2020, lauber_your_face_2014, klose_text_2019, fukushima_comparing_2020} \\ 
+ \bottomrule
+\end{tabular}
+}
+\end{table}
+
+
+
+\subsubsection*{Presentation modality}
+\label{sec:Relatedwork:ohmd_notification:presentation_modality}
+
+Regarding the presentation modality, most studies have focused on utilizing multiple sensory modalities (e.g., visual vs. audio) for OHMD notifications \cite{ofek_reducing_2013, farve_user_2016, damian_augmenting_2015, cidota_workspace_2016}, while only a few have explored the use of a single sensory modality \cite{lucero_notifeye_2014, tanveer_rhema_2015}. In terms of multi-modality, previous research \cite{ofek_reducing_2013, cidota_workspace_2016} has compared audio and visual modalities for delivering secondary information through OHMDs and found that the audio modality is more suitable when immediate attention is required \cite{farve_user_2016}. However, auditory information can be more distracting \cite{ofek_reducing_2013}, as multiple auditory cues presented simultaneously may overlap, making it harder to distinguish compared to the visual modality \cite{cidota_workspace_2016}.
+Since the objective of this thesis is to present OHMD notifications with minimal distraction, the focus is on a single sensory modality, specifically the visual presentation modality. Moreover, visual presentation can be combined with other sensory modalities in a complementary manner \cite{rau_modality_2019}, and it is the predominant output mode in OHMDs \cite{itoh_towards_2021}.
+
+The visual presentation of notifications can be divided into two phases: the \textit{pre-presentation phase}, which aims to prepare users for incoming information, and the \textit{presentation phase}, which focuses on presenting the visual notification content \cite{lucero_notifeye_2014, tanveer_rhema_2015, stokes_dominance_2015}.
+For example, Lucero and Vetek \cite{lucero_notifeye_2014} developed the "NotifEye" system, using animated butterflies as a cue for incoming notifications and allowing users to attend to or pull OHMD notifications through subtle interactions.
+While ambient signals can help users prepare for incoming notifications and reduce potential distractions, their focus was primarily on the pre-presentation phase. In contrast, this thesis concentrates on the presentation phase of the notification itself, aiming to reduce distraction and preserve communicative effectiveness by modifying the presentation modality, which can also be combined with the pre-presentation phase.
+
+One way to make visual notifications less disruptive during the presentation phase is through the use of pictograms, which have been previously studied in navigational \cite{ells_rapid_1979, camacho_icons_1990, houts_role_2006} and healthcare \cite{houts_role_2006, leos_toro_perceptions_2019} contexts (also see \autoref{sec:Relatedwork:pattern_perception}). However, prior investigations comparing textual and pictorial modalities for \textit{notifications in desktop and OHMDs} have yielded inconsistent results. Some studies have reported no significant difference between text and pictograms in terms of users' primary task performance and distraction levels \cite{warnock_multiple_2013, warnock_subjective_2011}, while others have found that users preferred text over pictorial feedback \cite{tanveer_rhema_2015, somervell_evaluating_2002}. For example, Tanveer et al. \cite{tanveer_rhema_2015} delivered feedback on OHMDs during public speaking and found that text-based feedback was more effective and easier to learn than pictorial feedback. The mixed results from previous studies raise questions about the effectiveness of pictorial modalities for OHMDs and when they might be effective, which motivates the investigation in \autoref{ch:Iconnotif}.
+
+
+\subsubsection*{Distribute information to different regions of the eyes}
+\label{sec:Relatedwork:ohmd_notification:visual_regions}
+
+Related to the visual presentation modality, several studies have investigated factors related to presenting information to different regions of the eyes to minimize potential distractions. Current mobile devices, including OHMDs, typically utilize the central vision to present notifications in textual format \cite{android_android_2021}, as text can convey precise and detailed information \cite{theios_theoretical_1989, wiedenbeck_use_1999}. Therefore, most research in this category has focused on exploring the use of peripheral vision to support different multitasking scenarios and offload information from the central vision \cite{chaturvedi_peripheral_2019, ishiguro_peripheral_2011, gruenefeld_guiding_2018, luyten_hidden_2016, poppinga_ambiglasses_2012, costanza_eye_q_2006, nakuo_smart_2016, ku_peritext_2019}. However, the limited capabilities of peripheral vision (see \autoref{sec:Relatedwork:central_peripheral_vision}) restrict the amount of information that can be presented in peripheral notifications. Additionally, most of the solutions that utilize peripheral vision (e.g., \cite{nakuo_smart_2016, gruenefeld_guiding_2018, costanza_eye_q_2006}) require hardware changes and are not directly applicable to existing consumer OHMDs. Therefore, in \autoref{ch:Progressbar}, we explore the underutilized visual regions, such as the paracentral vision, for presenting OHMD notifications using existing OHMDs.
+
+\subsubsection*{Organization and timing of the presented information} 
+\label{sec:Relatedwork:ohmd_notification:timing}
+
+Several studies have examined how the organization and timing of secondary information impact the primary task. For instance, Ofek et al. \cite{ofek_reducing_2013} found that participants were less affected when visual information was presented in small batches and delivered during speech gaps in conversations. Similarly, Tanveer et al. \cite{tanveer_rhema_2015} tested the continuous and sparse provision of speech-related visual feedback in a public speaking scenario and found that sparse feedback was preferred. In \autoref{ch:Progressbar}, we employ these guidelines to design OHMD notifications.
+
+In a similar vein, animation is another technique used in notifications where the timing and location of information are leveraged to control attention \cite{tasse_getting_2016, maglio_tradeoffs_2000, mccrickard_evaluating_2001}. Studies in UX design have revealed that the duration and motion characteristics of animation should be carefully designed to minimize undesired user attractions, with recommended durations of around 100-500 ms for desktop and mobile devices \cite{page_executing_2023, head_designing_2016}. However, whether these guidelines can be directly applied to OHMD devices remains underexplored.
+
+Among different types of animations, fade animation has been shown to reduce notification interruption in desktop environments \cite{mccrickard_establishing_2003, mccrickard_evaluating_2001, maglio_tradeoffs_2000, wilson_gradual_2006}, and it has also demonstrated promising results in OHMDs \cite{faulhaber_priority_dependent_2022}. For example, Faulhaber et al. \cite{faulhaber_priority_dependent_2022} demonstrated that fade animations in OHMD notifications were the least distracting compared to moving and flashing animations. However, their study employed a combination of different animations, colors, and sizes, which collectively may have influenced the observed reduced distraction.
+
+Moreover, most previous studies exploring fade animation focused on a coarse level, such as fixed durations \cite{faulhaber_priority_dependent_2022, tasse_getting_2016, maglio_tradeoffs_2000, mccrickard_evaluating_2001, mccrickard_establishing_2003, luyten_hidden_2016}, without fully understanding the factors, such as fade duration, that impact the effective use of fade animations in notifications.
+Therefore, in \autoref{ch:Gradnotif}, we build upon previous work by isolating the factors that influence the effective use of fade animation specifically in the context of OHMDs.
+
+
+\subsubsection*{Placement of information} 
+\label{sec:Relatedwork:ohmd_notification:placement}
+
+The final category of investigation examines how information is positioned on OHMDs, including factors such as position, alignment, stabilization, and their impact on reducing distractions \cite{chua_positioning_2016, rzayev_effects_2020, klose_text_2019, fukushima_comparing_2020, lauber_your_face_2014}.
+
+Chua et al. \cite{chua_positioning_2016} studied the impact of different positions of OHMDs on the noticeability and perception of notifications during multitasking. They recommended using the middle-right, top-center, or top-right positions when users engage in multitasking situations where the primary tasks require central vision.
+Rzayev et al. \cite{rzayev_effects_2020} examined the differences between displaying information in different alignments (observer-locked vs. receiver-locked) and positions, and their effects on social engagement. Their investigations found that observer-locked alignment (i.e., information displayed at a fixed location relative to the observer) is generally perceived as less intrusive.
+Similarly, Klose et al. \cite{klose_text_2019} and Fukushima et al. \cite{fukushima_comparing_2020} explored content stabilization mechanisms by anchoring content to the world, body, and head, and found that text readability improves with world and body anchoring. However, head anchoring is preferred for urgent texts such as notifications. 
+In our designs, we adopted the top-center position, observer-locked alignment, and head anchoring based on these findings.
+
+
+\section{Summary}
+\label{sec:Relatedwork:summary}
+
+Previous investigations on visual presentation have primarily focused on utilizing peripheral vision to minimize distraction. However, this approach has limitations in conveying information comparable to the central vision. After thoroughly examining the existing literature on OHMD notifications, we have identified the need for designing notifications that effectively balance communication and minimize attention costs to primary tasks.
+
+Our approach addresses this challenge by leveraging human visual perception. We aim to design notifications that maintain communication effectiveness while minimizing distraction. This involves utilizing the unique capabilities of different visual regions during multitasking scenarios.
+
+Firstly, we explore the use of paracentral vision (\autoref{ch:Progressbar}) as a means to present notification information without significantly interrupting central visual tasks. Next, we delve into the capabilities of central vision, specifically pattern perception (\autoref{ch:Iconnotif}), and luminance contrast perception (\autoref{ch:Gradnotif}), to effectively convey notification content.
+
+By adopting this approach, we introduce new ways to utilize both central vision and nearby vision regions in the design of OHMD notifications. Additionally, we seek to understand the reasons behind the discrepancies observed in the existing literature, which deviate from the principles of visual perception. Through this understanding, our aim is to optimize the presentation of OHMD notifications by considering the specific affordances of OHMDs.

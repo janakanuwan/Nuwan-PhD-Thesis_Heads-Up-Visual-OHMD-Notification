@@ -1,0 +1,60 @@
+%%% enable "DoubleSided" for paper-based submission, i.e. printing, and 
+%%% remove it for the final submission, i.e. electronic thesis
+%\newcommand*{\DoubleSided}{} 
+
+
+\newif\ifcomment
+% \commenttrue 
+\commentfalse
+
+\input{_global_settings.tex}
+
+\begin{document}
+
+\title{Heads-Up Visual OHMD Notifications}
+
+\author{Nanayakkarawasam Peru Kandage Nuwan Janaka}
+\prevdegrees{%
+  B.Sc. (Eng), University of Moratuwa, Sri Lanka}
+\degree{Doctor of Philosophy}
+\field{Computer Science}
+\degreeyear{2023}
+\supervisor{Associate Professor Shengdong Zhao}
+
+% only involve the examiners in the final submission
+\examiners{%
+  Assistant Professor Brian Y. Lim\\
+  Associate Professor Suranga Chandima Nanayakkara \\
+%   Prof. Roger Zimmermann
+  }
+
+\maketitle
+
+\declaredate{1 June 2023}
+% \declaresign{\RootPicDir /signature.jpg} % remove this if you prefer to sign physically
+\declarationpage
+
+\begin{frontmatter}
+  \dedicate{To ``poor'' PhD students}
+  \input{chapters/acknowledgments.tex}
+  \tableofcontents 
+  \input{chapters/abstract.tex}
+  \listoffigures
+  \listoftables
+\end{frontmatter}
+
+\input{chapters/ch-Intro.tex}
+\input{chapters/ch-Relatedwork.tex}
+
+% \input{chapters/ch-RemoveProjects}
+\input{chapters/ch-Progressbar.tex}
+\input{chapters/ch-Iconnotif.tex}
+\input{chapters/ch-Gradnotif.tex}
+
+\input{chapters/ch-Conclusion.tex}
+
+\bookmarksetup{startatroot}
+\printbibliography[heading=bibintoc]
+
+
+\end{document}

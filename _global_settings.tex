@@ -1,0 +1,353 @@
+\ifdefined\DoubleSided
+  \documentclass[twoside,openright,a4paper]{nusthesis}
+\else
+  \documentclass[a4paper]{nusthesis}
+\fi
+
+\dsp % pseudo double spacing
+
+%%% The abstract of the thesis is titled as "Abstract" by default. 
+%%% However, the Graduate Division may require you to name it as "Summary".
+\renewcommand{\abstractname}{Summary}
+
+%%% Depth of section numbering
+\setcounter{secnumdepth}{3}
+
+%%% Depth of numbering in table of content
+\setcounter{tocdepth}{2}
+
+\usepackage{indentfirst} % indent the first paragraph of a section
+
+
+\usepackage{bookmark}
+\usepackage[
+  backend=biber,
+  style=ieee,
+  citestyle=numeric,
+  giveninits=true,
+  sorting=nyt,
+  maxbibnames=99,
+  dashed=false,
+  doi=false]{biblatex}
+\DeclareFieldFormat*{title}{``#1''\newunitpunct} % move comma outside the quotation mark
+\addbibresource{chapters/references.bib}
+
+\usepackage{microtype} % Better typography
+\usepackage{tabulary} % Automatic table sizing
+\usepackage{hhline}
+
+\usepackage{enumitem}
+
+\usepackage{hyperref}
+\renewcommand{\sectionautorefname}{\S}
+\let\subsectionautorefname\sectionautorefname
+\let\subsubsectionautorefname\sectionautorefname
+\renewcommand{\chapterautorefname}{Chapter}
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Code}
+\lstset{language=SQL, 
+    morekeywords={ONLINE, WITHIN},
+    frame=none,
+    float,
+    basicstyle=\ttfamily\normalsize,
+    keywordstyle=\bfseries,
+    numbers=none,
+    showstringspaces=false,
+    aboveskip=-2pt, %\smallskipamount
+    belowskip=-4pt, %\smallskipamount
+    xleftmargin=1em,
+    escapeinside={(*@}{@*)},
+    captionpos=b
+}
+
+\let\proof\relax
+\let\endproof\relax
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition} \newcommand{\defnautorefname}{Definition}
+\theoremstyle{plain}
+\newtheorem{rul}{Rule} \newcommand{\rulautorefname}{Rule}
+\newtheorem{thm}{Theorem} \newcommand{\thmautorefname}{Theorem}
+\newtheorem{lemma}{Lemma} \newcommand{\lemmaautorefname}{Lemma}
+\newtheorem{coroll}{Corollary} \newcommand{\corollautorefname}{Corollary}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\vbar}{\vert}{\vert}
+\DeclarePairedDelimiter{\vbarbar}{\Vert}{\Vert}
+\DeclarePairedDelimiter{\parenLR}{\lparen}{\rparen}
+\DeclarePairedDelimiter{\brackLR}{\lbrack}{\rbrack}
+\DeclarePairedDelimiter{\braceLR}{\lbrace}{\rbrace}
+\DeclarePairedDelimiter{\angleLR}{\langle}{\rangle}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\usepackage{interval}
+\intervalconfig{soft open fences}
+\newcommand{\intervalO}{\interval[open]}
+\newcommand{\intervalOL}{\interval[open left]}
+\newcommand{\intervalOR}{\interval[open right]}
+
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\SetAlgorithmName{Algorithm}{Algorithm}{Algorithm}
+\newcommand{\AlgoFontSize}{\small} % \scriptsize \footnotesize \small \normalsize
+\IncMargin{0.5em}
+\SetCommentSty{textnormal}
+\SetNlSty{}{}{:}
+\SetAlgoNlRelativeSize{0}
+\SetKwInput{KwGlobal}{Global}
+\SetKwInput{KwPrecondition}{Precondition}
+\SetKwProg{Proc}{Procedure}{:}{}
+\SetKwProg{Func}{Function}{:}{}
+\SetKw{And}{and}
+\SetKw{Or}{or}
+\SetKw{To}{to}
+\SetKw{DownTo}{downto}
+\SetKw{Break}{break}
+\SetKw{Continue}{continue}
+\SetKw{SuchThat}{\textit{s.t.}}
+\SetKw{WithRespectTo}{\textit{wrt}}
+\SetKw{Iff}{\textit{iff.}}
+\SetKw{MaxOf}{\textit{max of}}
+\SetKw{MinOf}{\textit{min of}}
+\SetKwBlock{Match}{match}{}{}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{soul}
+\soulregister\cite7
+\soulregister\ref7
+\soulregister\pageref7
+\soulregister\autoref7
+\soulregister\eqref7
+\newcommand{\hlred}[2][Lavender]{{\sethlcolor{#1}\hl{#2}}}
+\newcommand{\hlblue}[2][SkyBlue]{{\sethlcolor{#1}\hl{#2}}}
+\newcommand{\hlyellow}[2][GreenYellow]{{\sethlcolor{#1}\hl{#2}}}
+\newcommand{\hlgreen}[2][YellowGreen]{{\sethlcolor{#1}\hl{#2}}}
+
+\let\originaleqref\eqref
+\renewcommand{\eqref}{Equation~\ref}
+
+
+%%% Use this command when you need to add a hyphen with hyphenation 
+%%% enabled for the individual compound words
+\newcommand{\zz}{-\nolinebreak\hspace{0pt}}
+
+%%% Handy commands for image/figure insertion
+\newcommand*{\RootPicDir}{pic}
+\newcommand*{\PicDir}{\RootPicDir}
+\newcommand*{\ResetPicDir}{\renewcommand*{\PicDir}{\RootPicDir}}
+\newcommand*{\SetPicSubDir}[1]{\renewcommand*{\PicDir}{\RootPicDir /#1}}
+\newcommand*{\Pic}[1]{\PicDir /#1}
+
+\newcommand*{\RootExpDir}{exp}
+\newcommand*{\ExpDir}{\RootExpDir}
+\newcommand*{\ResetExpDir}{\renewcommand*{\ExpDir}{\RootExpDir}}
+\newcommand*{\SetExpSubDir}[1]{\renewcommand*{\ExpDir}{\RootExpDir /#1}}
+\newcommand*{\Exp}[2]{\ExpDir /#2.#1}
+
+\newcommand*{\BeforeCaptionVSpace}{1ex}
+\newcommand*{\BeforeSubCaptionVSpace}{0.75ex}
+
+%%% For example code used only
+\usepackage{lipsum} % for generating dummy text
+\newcommand{\CMD}[1]{\texttt{\string#1}} % for typing a command
+
+
+
+
+%%  supported package
+%% https://www.acm.org/publications/taps/whitelist-of-latex-packages
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+
+\usepackage[nomessages]{fp}% http://ctan.org/pkg/fp (math)
+\usepackage{soul} % text highlighting
+\usepackage{fp} % floating point
+
+
+% change autoref formatting
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
+\renewcommand{\subsubsectionautorefname}{Section}
+
+
+
+
+\ifcomment
+
+\usepackage{silence} % ignore trivial warnings
+\WarningFilter{biblatex}{File 'english-ieee.lbx'}
+
+\fi
+
+% custom macros 
+\renewcommand{\b}[1]{\textbf{#1}}
+\renewcommand{\i}[1]{\textit{#1}}
+
+\ifcomment
+%% keep comments
+\newcommand{\hide}[1]{}
+\newcommand{\note}[1]{\textcolor{blue}{<< #1 >>}}
+\renewcommand{\added}[1]{\textcolor[rgb]{0.1, 0.56, 1}{#1}}
+\newcommand{\modif}[1]{\textcolor[rgb]{0.5,0.5,0.9}{#1}}
+\newcommand{\cut}[1]{\textcolor[rgb]{0.5,0.5,0.5}{CUT: #1}}
+\newcommand{\checkme}[1]{\textcolor{red}{CHECKME: #1}}
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+\newcommand{\moved}[1]{\textcolor{green}{#1}}
+\renewcommand{\deleted}[1]{\textcolor[rgb]{0.8,0.8,0.8}{#1}}
+\newcommand{\removedbutkept}[1]{\textcolor[rgb]{0.8,0.5,0.9}{#1}}
+\newcommand{\temporary}[1]{\textcolor[rgb]{0.9,0.9,0.9}{{#1}}}
+
+\newcommand{\nuwan}[1]{\textcolor{blue}{NUWAN: #1}}
+\newcommand{\zsd}[1]{\textcolor[rgb]{0.5,0.1,0.8}{ZSD: #1}}
+
+\else
+%% remove comments
+\newcommand{\hide}[1]{}
+\newcommand{\note}[1]{}
+\renewcommand{\added}[1]{#1}
+\newcommand{\modif}[1]{#1}
+\newcommand{\cut}[1]{}
+\newcommand{\checkme}[1]{#1}
+\newcommand{\todo}[1]{}
+\newcommand{\moved}[1]{#1}
+\renewcommand{\deleted}[1]{}
+\newcommand{\removedbutkept}[1]{#1}
+\newcommand{\temporary}[1]{}
+
+\newcommand{\nuwan}[1]{}
+\newcommand{\zsd}[1]{}
+
+\fi
+
+%% statistics
+\newcommand{\meansd}[2]{$M = #1,\: SD = #2$} 
+\newcommand{\meadianiqr}[2]{$Mdn = #1,\: IQR = #2$} 
+\newcommand{\range}[2]{$MIN = #1,\: MAX = #2$} 
+\newcommand{\kruskalwallis}[3]{Kruskal-Wallis test, $\chi^{2}(#1)\:=\:#2$, #3} 
+\newcommand{\mannwhitney}[3]{Mann-Whitney U test, #1, #2} 
+\newcommand{\wilcoxon}[2]{$Z=#1, \: p#2$} 
+\newcommand{\wilcoxonef}[3]{$Z=#1, \: p#2, \:r=#3$} 
+\newcommand{\ttest}[3]{$t(#1)=#2, \: p#3$} 
+\newcommand{\ttestef}[4]{$t(#1)=#2, \: p#3, \:d=#4$} 
+\newcommand{\spearmancorr}[2]{$Spearman's \: \rho = #1,\: \text{p} = #2$} 
+\newcommand{\andersondarling}[2]{\i{Anderson-Darling}$ = #1,\: p = #2$} 
+
+\newcommand{\friedman}[4]{$\chi^{2}(#1) = #2,\: \pval{#3},\: \text{\hide{Kendall’s }W} = #4$} % Friedman test: DF, Chi-square value, p, Kendall's W
+\newcommand{\anova}[4]{$F_{#1,#2}=#3$, \pval{#4}} % Classic ANOVA: DF, DFDen, F and p
+\newcommand{\anovas}[4]{$F_{#1,#2}=#3$, $p<#4$} % Significant ANOVA: DF, DFDen, F and p
+\newcommand{\anovawef}[5]{$F_{#1,#2}=#3$, \pval{#4}, \eff{#5}} % ANOVA with effect size
+% \newcommand{\anovaswef}[5]{{($F_{#1,#2}=#3$, $p<#4$, \eff{#5})}} % ANOVA Significant with effect size
+\newcommand{\anovaswef}[5]{{$F_{#1,#2}=#3$, $p<#4$}} % ANOVA
+\newcommand{\anovawefp}[5]{$F_{#1,#2}=#3$, \pval{#4}, \effp{#5}}
+\newcommand{\effp}[1]{$\eta^{2}_{p}=#1$} % ANOVA with partial effect
+\newcommand{\eff}[1]{$\eta^2=#1$}
+\newcommand{\effd}[1]{$d=#1$}
+\newcommand{\effr}[1]{$r=#1$}
+\newcommand{\epsiloncorrection}[1]{$\epsilon=#1$}
+
+\newcommand{\pval}[1]{$p#1$}
+\newcommand{\pbonf}[1]{$p_{bonf}#1$}
+
+\renewcommand{\quote}[1]{``#1''}
+\newcommand{\quoteby}[2]{``#2 (#1)''}
+
+\newcommand{\significantI}[0]{$^{\star}$}
+\newcommand{\significantII}[0]{$^{\dagger}$}
+\newcommand{\significantIII}[0]{$^{\ddagger}$}
+
+
+\newcommand{\participantproportion}[2]{\textit{#1/#2 = \FPeval{\result}{round(#1*100/#2,1)}\result\%}} 
+
+
+\newcommand{\highlight}[1]{\hl{\textbf{#1}}}
+\newcommand{\highlightonly}[1]{\colorbox{yellow}{#1}}
+
+% inline image
+\newcommand{\inlineimg}[1]{%
+  \begingroup\normalfont
+  \includegraphics[width=2\fontcharht\font`\B]{#1}%
+  \endgroup
+}
+
+% ref: https://tex.stackexchange.com/questions/346211/partially-colored-cells
+\newlength\maxlen
+% \databar{max_value}{current_value} (absolute bar)
+\newcommand\databar[3][blue!30]{%  
+  \FPeval\result{round(#3/#2:4)}%
+  \rlap{\textcolor{#1}{\hspace*{\dimexpr-\tabcolsep+.5\arrayrulewidth}%
+        \rule[-.05\ht\strutbox]{\result\maxlen}{.95\ht\strutbox}}}%
+  \makebox[\dimexpr\maxlen-2\tabcolsep+\arrayrulewidth][r]{#3}}
+% \databarrel{max_value}{min_vlaue}{current_value} (relative bar)
+\newcommand\databarrel[4][blue!30]{%
+  \FPeval\result{round((#4-#3)/(#2-#3):4)}%
+  \rlap{\textcolor{#1}{\hspace*{\dimexpr-\tabcolsep+.5\arrayrulewidth}%
+        \rule[-.05\ht\strutbox]{\result\maxlen}{.95\ht\strutbox}}}%
+  \makebox[\dimexpr\maxlen-2\tabcolsep+\arrayrulewidth][r]{#4}}
+\def\databarlength{xx.xx} % 4 digits
+\settowidth\maxlen{\databarlength}
+\addtolength\maxlen{\dimexpr2\tabcolsep-\arrayrulewidth}
+
+% studies
+\newcommand{\studyone}[1]{\textit{study 1#1}}
+\newcommand{\studytwo}[0]{\textit{study 2}}
+\newcommand{\studythree}[0]{\textit{study 3}}
+\newcommand{\studyfour}[0]{\textit{study 4}}
+
+\newcommand{\Studyone}[1]{\textit{Study 1#1}}
+\newcommand{\Studytwo}[0]{\textit{Study 2}}
+\newcommand{\Studythree}[0]{\textit{Study 3}}
+\newcommand{\Studyfour}[0]{\textit{Study 4}}
+
+\newcommand{\factor}[1]{\textbf{\textit{#1}}.}
+
+
+% common DVs
+\newcommand{\dprime}[0]{$d^{'}$} 
+\newcommand{\hitrate}[0]{\textit{H}}
+\newcommand{\falsealarmrate}[0]{\textit{F}}
+\newcommand{\reactionTime}[0]{\textit{RT}}
+\newcommand{\immediateRecall}[0]{\textit{Recall Accuracy}}
+
+\newcommand{\readingTime}[0]{\textit{Reading Time}}
+\newcommand{\readingAccuracy}[0]{\textit{Reading Accuracy}}
+\newcommand{\adjustedReadingAccuracy}[0]{\textit{Adjusted Reading Accuracy}}
+\newcommand{\notificationAccuracy}[0]{\textit{Notification Accuracy}}
+
+\newcommand{\SUS}[0]{\textit{SUS}}
+\newcommand{\perceivedTaskLoad}[0]{\textit{RTLX}}
+\newcommand{\perceivedInterruption}[0]{\textit{Perceived Interruption}}
+
+\newcommand{\noticeability}[0]{\textit{Noticeability}}
+\newcommand{\understandability}[0]{\textit{Understandability}}
+\newcommand{\perceivedEaseIdentification}[0]{\textit{Ease of Identification}}
+\newcommand{\comfortability}[0]{\textit{Comfortability}}
+\newcommand{\perceivedEffectiveness}[0]{\textit{Perceived Effectiveness}}
+
+\newcommand{\preference}[0]{\textit{Preference}}
+
+\newcommand{\Interruption}[0]{\textit{Interruption}}
+\newcommand{\Reaction}[0]{\textit{Reaction}}
+\newcommand{\Comprehension}[0]{\textit{Comprehension}}
+\newcommand{\Satisfaction}[0]{\textit{Satisfaction}}
+
+\newcommand{\RQMainThesis}[0]{\textit{How do we modify the information presentation of visual OHMD notifications to minimize attention costs while maintaining communicative effectiveness during multitasking?}}
+\newcommand{\RQMainProgressBar}[0]{\textit{How can we distribute notification content to engage different vision regions to minimize the attention costs of OHMD notifications?}}
+\newcommand{\RQMainIconNotif}[0]{\textit{How do we convert notification content to easily recognizable shapes to minimize the attention costs of OHMD notifications?}}
+\newcommand{\RQMainGradNotif}[0]{\textit{How can we control the luminance of notification content to minimize the attention costs of OHMD notifications?}}
+
+% individual chapters
+\input{_settings_ch-Progressbar.tex}
+\input{_settings_ch-Iconnotif.tex}
+\input{_settings_ch-Gradnotif.tex}

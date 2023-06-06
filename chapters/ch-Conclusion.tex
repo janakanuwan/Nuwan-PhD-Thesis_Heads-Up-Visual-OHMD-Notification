@@ -1,0 +1,160 @@
+\chapter{Conclusion}
+\label{ch:Conclusion}
+
+\section{Thesis review}
+
+Notifications are crucial in keeping users informed about secondary digital information and managing their attention during multitasking. However, notifications can distract users from their primary tasks and reduce performance. Therefore, this thesis explored ways to minimize the attention cost of OHMD notifications by altering the information presentation modality. To achieve this, the thesis harnessed three human visual perception properties integral to the perception process (i.e., receiver, source, and channel) to design OHMD notifications that minimize visual disruption in multitasking scenarios.
+
+Firstly, the thesis investigated the potential use of the paracentral and near-peripheral visual regions of the eyes (receiver) for presenting OHMD notification content. This area has been underutilized in HCI research. As a proof of concept, circular progress notifications during social interactions were explored, and it was demonstrated that circular progress notifications reduce disengagement with conversation partners. This suggests that presenting secondary information within the circular area of the paracentral and near-peripheral vision in OHMDs supports attention-maintaining visualizations and minimizes attention costs.
+
+
+Secondly, the thesis explored human pattern perception (source) by using pictograms in OHMD notifications to facilitate recognition and enhance attention control. By focusing on calendar notifications, the thesis demonstrated the desirability and feasibility of transforming text notifications into pictogram-based notifications, providing guidelines for researchers and practitioners. This indicates that transforming secondary information into easily recognizable formats (e.g., text to icons) in OHMDs minimizes attention costs in acquiring such information.
+
+Lastly, the thesis investigated the adjustment of luminance (channel) through gradual brightness changes in OHMD notifications. This approach aimed to reduce the disruption caused by sudden visual stimuli in near-eye displays. By using text notifications as an example, it is shown that presenting notifications with fading animations, gradually increasing luminance contrast, can reduce interference with primary tasks compared to existing animations. This suggests that gradually presenting notification content can minimize attention costs in OHMD notifications.
+
+Through these projects, the thesis aimed to address the leading thesis question: \RQMainThesis{} The findings demonstrate that distributing OHMD notification content across different visual regions based on importance, presenting them in easily recognizable formats (such as pictograms/graphics instead of text), and employing gradual presentation techniques (such as fading animations) enable quicker resumption of primary tasks and help minimize the attention costs associated with visual OHMD notifications.
+
+
+
+
+\section{Design implications}
+
+With the emergence of consumer-grade OHMDs, these devices are poised to play a significant role in accessing digital information. Similar to how the proliferation of mobile phones led to the mobile interaction paradigm, OHMDs have the potential to introduce the heads-up computing interaction paradigm. This thesis focused on an important aspect of OHMD use and heads-up computing: handling notifications and interruptions from digital information. It explored the utilization of human perception abilities as a novel approach to address this challenge.
+
+Considering the attention-utility trade-off inherent in notifications, this research investigated various visual perception properties to minimize visual attention costs while preserving utility, particularly communication effectiveness. Three key visual perception properties are leveraged in transforming the information presentation modality: vision regions (receiver), form perception (source), and luminance contrast (channel). By incorporating these properties, the goal was to maintain communication effectiveness (e.g., information capacity, comprehension) while reducing attention costs (e.g., distraction).
+
+It is important to note that while this thesis focused on specific visual perception properties, other properties can also be utilized to minimize attention costs. However, these properties are beyond the scope of this thesis and will be discussed as part of future work (\autoref{sec:future_work}).
+
+While the implications of each work are already presented in detail within their respective chapters (i.e., \autoref{sec:Progressbar:general_discussion}, \autoref{sec:IconNotif:general_discussion}, \autoref{sec:GradNotif:general_discussion}), we provide a summary of the key findings and their design implications here.
+
+\subsection{Distribute information content to engage different vision regions to minimize attention costs}
+ 
+Although our focus was on OHMD notification presentations, the research findings have broader implications for other types of informative OHMD presentations. One key insight is the importance of minimizing interference with central vision when engaged in a primary task. This implies that secondary information should be presented in visual regions that have minimal impact on central vision. By utilizing other visual regions, such as the paracentral and near-peripheral regions (as explored in \autoref{ch:Progressbar}), designers can develop attention-maintaining displays for secondary information.
+
+To achieve this, designers need to distribute information across different eye regions or create information presentation layouts based on the user's needs, considering factors like the importance or urgency of the information at a given time (refer to \autoref{sec:Progressbar:general_discussion} for more details).
+
+
+Specifically, circular presentation of information on OHMDs can effectively utilize the paracentral and near-peripheral vision while maintaining attention on a central target. For instance, circular presentation of menus, conversation aids, and notification summaries in OHMDs can support better multitasking compared to traditional linear representations. However, further investigations are required to better understand circular presentations' implications and potential applications.
+
+For example, consider a smart home scenario where a host wants to control smart devices while socially interacting with guests. Presenting menu controls in a circular arrangement surrounding the guest's face can minimize the need to switch attention between the guest's face and device controls, enhancing social engagement and improving social acceptability (e.g., see \cite{runze_paraglassmenu_2023}).
+
+
+
+\subsection{Convert information content to easily recognizable format to minimize attention costs}
+
+As demonstrated in \autoref{ch:Iconnotif}, the transformation of text-only notifications into \iconnotif{s} reduces the interruption caused by OHMD notifications while maintaining comprehension and reaction. These findings on icon augmentation can be extended to other forms of secondary information visualization on OHMDs. We recommend that designers consider factors such as icon familiarity, encoding density, and external brightness levels to effectively utilize icons in OHMDs (refer to \autoref{sec:IconNotif:general_discussion} for more details).
+
+For example, when users transition between different environments (e.g., from indoors to outdoors), the presentation of icon-augmented notifications should be dynamically adjusted (e.g., increasing/decreasing contrast difference) to maintain a consistent level of noticeability across environments. However, further investigations are needed to determine the optimal visualization type (pictograms vs. text) and the specific conditions for different situational contexts and devices, as the choice of visualization method depends on the specific requirements of the context (e.g., text may be more suitable for conveying complex nuances such as tone, while icons enable faster recognition compared to text).
+
+Overall, transforming information content into an easily recognizable format, such as using pictograms, minimizes attention costs in OHMD notifications. Future research should explore the best practices for icon design and consider different contextual factors to enhance the effectiveness of this approach.
+
+\subsection{Present information content gradually to minimize attention costs}
+
+As discussed in \autoref{ch:Gradnotif}, using fading animations to control luminance contrast in OHMD notification content effectively reduces attention costs. However, the optimal fading animation depends on various factors, including the complexity of the ongoing task, mobility of the user, external brightness levels, and the urgency of the information being presented (see\autoref{sec:GradNotif:general_discussion} for more details). Therefore, it is crucial to consider these factors collectively when designing notifications.
+
+For instance, as the complexity of the task increases, the notification should switch to a gradual presentation to minimize interference with the task. On the other hand, when the urgency of the information increases, the notification should automatically switch to an instant presentation to convey the sense of urgency.
+
+Taking these factors into account during the design process allows for the effective use of gradual presentation techniques in OHMD notifications, thereby minimizing attention costs. Further research is needed to explore the specific parameters and thresholds for different contextual scenarios and user preferences to optimize the implementation of fading animations in OHMD notification design.
+
+\subsection{Cross combination}
+
+In realistic situations, a combination of the above guidelines should be employed to maximize utility and minimize attention costs in OHMD notification design. To achieve this, the system should consider contextual factors such as external brightness levels and the user's current primary task, along with the user's attention level, which can be tracked using techniques like eye tracking.
+
+Based on the importance of each piece of information, the system should dynamically adjust the layout and presentation modality of the notifications to minimize attention costs. For example, more important content should be displayed in the central or paracentral vision regions, which are more likely to capture the user's attention. Less important information can be distributed in the peripheral vision, reducing their interference with the primary task.
+
+Furthermore, text-based content should be transformed into a graphical format, such as icons or pictograms, to facilitate easier recognition and comprehension. This transformation helps minimize the cognitive load associated with reading text-based notifications and reduces attention costs.
+
+Finally, the system should consider employing gradual presentation techniques for notifications, especially when the ongoing task requires focused attention. By gradually presenting the notification content, the system can minimize interference with the ongoing task and reduce attention costs.
+
+By combining these guidelines and dynamically adapting the layout, presentation modality, and timing of notifications based on the context and importance of the information, OHMD systems can effectively manage notifications and optimize the balance between utility and attention costs.
+
+\subsection{Extending to Heads-Up Displays}
+
+Furthermore, our research findings can be extended to Heads-Up Displays (HUDs) in vehicles and cockpits \cite{noauthor_continental_2022, sexton_15_1988}, which share similar display characteristics with OHMDs. In these applications, minimizing interruptions from secondary information, such as notifications, is crucial to avoid potentially severe consequences like traffic accidents. Therefore, attention-maintaining visualizations and easily recognizable information presentation should be employed.
+
+Additionally, design solutions for HUDs should consider the automatic presentation and dismissal of information, including notifications. For example, notifications at the beginning of a journey could display the required speed, while the estimated arrival time could be shown near the end. Periodic display of directions, when needed, can also be implemented. This approach helps drivers maintain their attention on the road, promoting safety while providing necessary information.
+
+However, it is important to note that OHMDs and HUDs may have different affordances, such as differences in the field of view (FoV). Therefore, further verification and adaptation of the guidelines proposed in this thesis are necessary to ensure their applicability and effectiveness for HUDs.
+
+\subsection{Consider Device Affordances}
+
+While this thesis primarily focused on OHMD notifications, we anticipate that the results can be applied to other forms of information presentation on OHMDs, as perceptual properties are generally applicable. Therefore, researchers can apply our high-level findings to the design of notifications on different devices, including heads-up displays. However, it is crucial for designers to consider the specific affordances of each device, such as the field of view and usage context, as they impose limitations on information presentation. For instance, utilizing different visual regions may be feasible on large-screen displays similar to OHMDs, as both can present information across different parts of the visual field. However, it may be challenging on small-screen devices like smartphones due to their narrower visual angles.
+
+Likewise, this thesis emphasizes the importance of understanding how existing guidelines should be modified from desktop and mobile platforms to OHMD platforms, as well as identifying principles that can be applied despite the differences in affordances \cite{stephanidis_properties_2015, zhu_bishare_2020, vadas_reading_2006, zhou_ubiquitous_2019}. For example, our studies revealed that contextual factors such as external brightness play a significant role in icon augmentation, which may not be as critical in desktop notifications. Similarly, the optimal fading properties for OHMD notifications (e.g., around 2 seconds) differ from those for desktop and mobile notifications (e.g., less than 500 milliseconds). Moreover, determining the optimal presentation may depend on the surrounding environment, particularly in situations where diverting the user's attention to secondary information can have severe consequences, such as walking in crowded areas or crossing roads. Therefore, further verification is needed to understand how device affordances interact with perceptual properties and existing guidelines.
+
+
+\subsection{Minimize Information Overloading}
+
+It's crucial to understand that solely employing mitigating strategies (\autoref{sec:Relatedwork:notification_management}) might not be sufficient to address the attention costs associated with the potentially large number of daily notifications. Hence, we suggest a multi-step process not explored in this thesis. The first step involves providing the user with only the "necessary" information (e.g., important notifications). This can be accomplished by employing compact representations (e.g., removing filler words) and filtering strategies. Moreover, OHMD operating systems could, by default, opt out of notifications or enforce individual apps to get user permission upon first-time use (e.g., \cite{westermann_user_2017}). The second step involves using mediating and scheduling strategies (\autoref{sec:Relatedwork:notification_management}) to present information when users are most receptive. To achieve this, we may need to model user receptivity in various contexts (\autoref{sec:Future_work:multimodal_notif}, e.g., \cite{fischer_understanding_2011}). As examined in this thesis, the final step is to apply mitigating strategies to reduce the attention cost of information. This can be done by exploiting visual perception properties to design new visualizations that are better suited for OHMDs.
+
+
+
+
+\section{Limitations}
+
+The limitations associated with each work have been discussed in detail within the corresponding chapters (i.e., \autoref{sec:Progressbar:limitations}, \autoref{sec:IconNotif:limitations}, \autoref{sec:GradNotif:limitations}). Here, we summarize the limitations related to the generalization of results.
+
+First, it is important to acknowledge that we explored notification designs in specific contexts and for particular types of notifications, which may limit the generalizability of the findings. The selected contexts and perception properties may not fully represent all possible scenarios and visual presentation needs.
+
+Secondly, we focused primarily on the notification content to isolate the effects of different designs. However, in real-world scenarios, notifications often come from specific app sources, and the visualization may need to consider the integration of those sources and their respective information.
+
+Lastly, our studies involved short-duration experiments with tech-savvy participants in limited realistic scenarios and a small number of OHMD prototypes. Although our sample sizes were moderate \cite{caine_local_2016}, the results may not capture the long-term effects and may not be directly applicable to other populations, such as older adults or individuals with visual impairments. Additionally, in some studies, the transition from controlled to more realistic settings did not yield significant results due to the influence of confounding factors present in real-world environments. To address this, future studies can either simulate more realistic settings or employ improved experimental designs to better control for confounding factors. Conducting pilot studies with researchers, who are more familiar with potential confounds, can help identify and quantify the effects of these factors early on.
+
+
+
+
+
+\section{Future work}
+\label{sec:future_work}
+
+Based on the research conducted in this thesis, there are several potential directions for future research, which can be categorized into two main areas: OHMD notification evaluation and OHMD notification applications.
+
+
+\subsection{Notification evaluation}
+
+
+\subsubsection*{Explore other visual perception properties}
+
+This thesis focused on three fundamental aspects of visual perception: vision region, luminance, and form/pattern, which affect how information is received, channeled, and sourced (\autoref{sec:Intro:thesis_RQ}). However, there are other visual perception properties that have yet to be explored in the context of OHMD notifications. For example, Colin Ware provided a set of perception properties and design guidelines for information visualization \cite[Appendix D]{ware_information_2013}. Exploring these unexplored properties and adapting them to the OHMD notification context can provide valuable insights. For instance, guidelines such as using different visual channels (\textit{G5.2}, e.g., color, shape) to display various aspects of data and using strong peripheral alerting cues (\textit{G5.19}) for interrupts when cognitive load is high can be adapted to minimize attention costs in OHMD notifications. Additionally, notifications belong to different categories (e.g., messenger, calendar) and have varying importance \cite{sahami_shirazi_large_scale_2014}, so exploring how to visually present these differences to OHMD users in different multitasking scenarios using various visual channels and peripheral cues can help minimize attention costs.
+
+\subsubsection*{Multi-modal notifications and user modeling}
+\label{sec:Future_work:multimodal_notif}
+
+Presentation modality is a crucial factor that influences attention cost \cite{mccrickard_model_2003}, and exploring multi-modal OHMD notifications is an important extension of the current research. While a detailed exploration of multi-modal notifications is beyond the scope of this thesis, it is recommended for further study. Multi-modal notifications could involve presenting audio notifications when users are visually engaged to minimize visual interference and attention costs. Additionally, incorporating user and notification receptivity modeling techniques (e.g., \cite{mehrotra_my_2016, lee_does_2019, yuan_how_2017, pielot_didnt_2014, visuri_understanding_2019}) can help cater to individual differences and personalize the notification experience. Further research is needed to investigate when and how modalities can be switched, how each modality complements or interacts with others, how they influence users' goals, and which combinations of modalities should be used in dynamic environments (e.g., outdoor, noisy).
+
+\subsubsection*{In-the-wild evaluation}
+
+Contextual factors and their effects on receptivity and interruptibility have been explored for mobile phone notifications in real-world settings \cite{anderson_survey_2018, mehrotra_intelligent_2018}. However, due to the differences in device affordances, different principles and mechanisms may apply to OHMD notifications. Currently, there is a lack of literature on large-scale evaluations of OHMD notifications and comparisons between OHMD and mobile phone notifications \cite{sahami_shirazi_large_scale_2014, pielot_situ_2014}, partly due to the relatively low usage of OHMDs compared to smartphones (see \cite{bipat_analyzing_2019} for camera usage on OHMDs). As OHMDs become more widely adopted by consumers \cite{alsop_ar_2022}, larger-scale in-the-wild studies will be necessary to understand the differences between OHMD and mobile phone notifications, taking into account device affordances and contextual factors.
+
+\subsection{Notification applications}
+
+In addition to evaluation, there are potential applications of OHMD notifications that can be explored. Some areas for future research include:
+
+\subsubsection*{Notifications in communication}
+
+Unlike most notification categories that provide secondary information through unidirectional information flow, communication applications involve bidirectional information flow, necessitating user responses to notifications. This includes messaging and email notifications, which may require users to respond directly within the notification interface, circumventing the need to open the original application. To accommodate such notifications on OHMD platforms, the development of multi-modal presentations and interactions is necessary. Although preliminary investigations have been conducted (for instance, text editing on OHMDs \cite{ghosh_eyeditor_2020}), further exploration and analysis of interaction design for OHMD notifications in communication scenarios are warranted.
+
+
+\subsubsection*{Notifications in learning}
+
+Notifications can be used to seize underutilized opportune moments for productive tasks such as microlearning \cite{isaacs_mobile_2009, cai_waitsuite_2017}. By diverting users' attention during these moments, OHMD notifications can facilitate bite-sized learning. While past research has explored context-based microlearning using mobile phone notifications (e.g., \cite{dingler_language_2017}), OHMDs provide different affordances and present new opportunities for microlearning \cite{janaka_visual_2022}. Therefore, exploring the design space of OHMD notifications suited for microlearning and determining how secondary information should be presented in these situations is necessary.
+
+
+\subsubsection*{Notification speculation}
+
+This thesis focused on the \textit{presentation phase} of notifications (\autoref{sec:Relatedwork:ohmd_notification_management}). However, people often speculate or guess the source of notifications based on \textit{pre-presentation} alert signals, context, and past events. Notification speculation influences users' decisions and their attention to notifications, and inaccuracies in speculation can lead to negative emotions \cite{chang_i_2019}. As notification speculation is under-explored in the OHMD context, further research is needed to explore potential designs in the pre-presentation phase to support OHMD notification speculation. This will enable users to make more informed decisions about upcoming notifications and minimize the perceived interruption caused by notifications.
+
+
+\vspace{2em}
+We believe that exploring these and related future research directions will advance the techniques presented in this thesis and contribute to academia and industry.
+
+
+\section{Final remarks}
+
+The current mobile interaction paradigm, centered around mobile phones, has allowed us to access digital information anywhere, but it has also introduced negative effects such as ``smartphone zombies'' and poor posture. With the advancement of OHMDs, we believe that heads-up computing will be the next paradigm that addresses these issues and meets users' everyday digital information needs.
+
+However, the constant influx of notifications from various digital services can be a major source of distraction, especially when they are directly presented on near-eye displays. This thesis has explored ways to mitigate the attention costs associated with OHMD notifications while preserving their utility. However, it has also raised new questions and opened avenues for future research, as attention costs depend on various factors such as context and user characteristics.
+
+Despite the specific research findings, the most significant contribution of this work lies in demonstrating how visual perception properties can be utilized to minimize the attention costs of heads-up visual notifications. While we continue to develop strategies to manage mobile phone notifications each year, it may take several more years to effectively address the challenges posed by upcoming heads-up notifications.
+
+In conclusion, this thesis has laid the foundation for understanding and optimizing the presentation of OHMD notifications. Through the utilization of human visual perception properties, we have explored innovative approaches to minimize attention costs and improve the overall user experience. We hope that this research inspires further investigations and advancements in the field of heads-up computing, leading to more efficient and user-friendly interactions with digital information.
