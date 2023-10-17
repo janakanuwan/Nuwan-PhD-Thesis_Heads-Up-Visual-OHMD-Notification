@@ -24,3 +24,6 @@ Please use the following for citing this thesis:
 ## Latex template
 - This thesis was created using the Overleaf Latex template by LIN Qian (Creative Commons CC BY 4.0). Please see details [here](https://www.overleaf.com/latex/templates/thesis-template-of-the-national-university-of-singapore-nus/dvbzfzmxsbyf)
 
+## Licenses
+- Please honor the third-party content used in this document, including figures, and cite the original sources when necessary/appropriate
+- For some materials, please get the permission from the original authors/sources
